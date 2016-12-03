@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <!-- ACTIONS -->
+        <record model="ir.actions.act_window" id="homelibrary_book_action">
+            <field name="name">Libros</field>
+            <field name="res_model">homelibrary.book</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Añade unos libros
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="homelibrary_author_action">
+            <field name="name">Libros</field>
+            <field name="res_model">homelibrary.author</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Añade unos autores
+                </p>
+            </field>
+        </record>
+
+	<!-- MENU ITEM -->
+        <menuitem id="main_homelibrary_menu" name="Biblioteca"/>
+
+        <menuitem id="homelibrary_menu" name="Biblioteca"
+                  parent="main_homelibrary_menu"/>
+
+        <menuitem id="homelibrary_book_menu" name="Libros"
+                  parent="homelibrary_menu"
+		  action="homelibrary_book_action"/>
+
+        <menuitem id="homelibrary_author_menu" name="Autores"
+		  parent="homelibrary_menu"
+                  action="homelibrary_author_action"/>
+    </data>
+</openerp>
