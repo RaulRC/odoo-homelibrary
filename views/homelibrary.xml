@@ -1,42 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data>
+  <data>
+    <!-- VIEWS -->
+    <!-- Book -->
+    <!-- form -->
+    <record model="ir.ui.view" id="homelibrary_book_form_view">
+      <field name="name">homelibrary.book.form</field>
+      <field name="model">homelibrary.book</field>
+      <field name="arch" type="xml">
+        <form string="Libros">
+          <sheet>
+            <group>
+              <field name="title"/>
+              <field name="rack"/>
+              <field name="author_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <!-- tree -->
+    <record model="ir.ui.view" id="homelibrary_book_tree_view">
+      <field name="name">homelibrary.book.tree</field>
+      <field name="model">homelibrary.book</field>
+      <field name="arch" type="xml">
+        <tree string="Libros">
+          <field name="title"/>
+          <field name="rack"/>
+          <field name="author_id"/>
+        </tree>
+      </field>
+    </record>
 
+    <!-- Author -->
+    <!-- form -->
+    <record model="ir.ui.view" id="homelibrary_author_form_view">
+      <field name="name">homelibrary.author.form</field>
+      <field name="model">homelibrary.author</field>
+      <field name="arch" type="xml">
+        <form string="Autores">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="book_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <!-- tree -->
+    <record model="ir.ui.view" id="homelibrary_author_tree_view">
+      <field name="name">homelibrary.author.tree</field>
+      <field name="model">homelibrary.author</field>
+      <field name="arch" type="xml">
+        <tree string="Autores">
+          <field name="name"/>
+          <field name="book_ids"/>
+        </tree>
+      </field>
+    </record>
 
-        <!-- ACTIONS -->
-        <record model="ir.actions.act_window" id="homelibrary_book_action">
-            <field name="name">Libros</field>
-            <field name="res_model">homelibrary.book</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Añade unos libros
-                </p>
-            </field>
-        </record>
-        <record model="ir.actions.act_window" id="homelibrary_author_action">
-            <field name="name">Libros</field>
-            <field name="res_model">homelibrary.author</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Añade unos autores
-                </p>
-            </field>
-        </record>
+    <!-- ACTIONS -->
+    <record model="ir.actions.act_window" id="homelibrary_book_action">
+      <field name="name">Libros</field>
+      <field name="res_model">homelibrary.book</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Añade unos libros
+        </p>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="homelibrary_author_action">
+      <field name="name">Libros</field>
+      <field name="res_model">homelibrary.author</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Añade unos autores
+        </p>
+      </field>
+    </record>
 
-	<!-- MENU ITEM -->
-        <menuitem id="main_homelibrary_menu" name="Biblioteca"/>
+    <!-- MENU ITEM -->
+    <menuitem id="main_homelibrary_menu" name="Biblioteca"/>
 
-        <menuitem id="homelibrary_menu" name="Biblioteca"
-                  parent="main_homelibrary_menu"/>
+    <menuitem id="homelibrary_menu" name="Biblioteca"
+              parent="main_homelibrary_menu"/>
 
-        <menuitem id="homelibrary_book_menu" name="Libros"
-                  parent="homelibrary_menu"
-		  action="homelibrary_book_action"/>
+    <menuitem id="homelibrary_book_menu" name="Libros"
+              parent="homelibrary_menu"
+	      action="homelibrary_book_action"/>
 
-        <menuitem id="homelibrary_author_menu" name="Autores"
-		  parent="homelibrary_menu"
-                  action="homelibrary_author_action"/>
-    </data>
+    <menuitem id="homelibrary_author_menu" name="Autores"
+	      parent="homelibrary_menu"
+              action="homelibrary_author_action"/>
+  </data>
 </openerp>

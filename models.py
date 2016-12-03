@@ -2,6 +2,7 @@
 
 from openerp import models, fields, api
 
+
 class Book(models.Model):
     _name = 'homelibrary.book'
     title = fields.Char(required=True, string='Título')
