@@ -14,7 +14,6 @@ class Book(models.Model):
     title = fields.Char(required=True, string='Título')
     rack = fields.Integer(required=False, string='Estantería')
     author_id = fields.Many2one('homelibrary.author', string='Autor')
-    library_id = fields.Many2one('homelibrar.homelibrary', string='Biblioteca')
 
     @api.multi
     def _compute_name(self):

@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_homelibrary_homelibrary,homelibrary.homelibrary,model_homelibrary_homelibrary,,1,0,0,0
+access_homelibrary_book,access_homelibrary_book,model_homelibrary_book,,1,1,1,1
+access_homelibrary_author,access_homelibrary_author,model_homelibrary_author,,1,1,1,1
+access_homelibrary_homelibrary,access_homelibrary_homelibrary,model_homelibrary_homelibrary,,1,1,1,1
