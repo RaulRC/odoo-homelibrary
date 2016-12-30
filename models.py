@@ -10,16 +10,11 @@ class Homelibrary(models.Model):
 
 class Book(models.Model):
     _name = 'homelibrary.book'
-    name = fields.Char(compute='_compute_name')
+    name = fields.Char(requred=True)
     title = fields.Char(required=True, string='Título')
     description = fields.Text(string='Descripción adicional')
     rack = fields.Integer(required=False, string='Estantería')
     author_id = fields.Many2one('homelibrary.author', string='Autor')
-
-    @api.multi
-    def _compute_name(self):
-        for record in self: 
-            record.name = "%s (%s)" % (record.title, record.author_id.name)
 
 class Author(models.Model):
     _name = 'homelibrary.author'

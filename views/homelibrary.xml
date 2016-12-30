@@ -26,6 +26,7 @@
       <field name="model">homelibrary.book</field>
       <field name="arch" type="xml">
         <tree string="Libros">
+          <field name="name"/>	  
           <field name="title"/>
           <field name="description"/>
           <field name="rack"/>
