@@ -11,7 +11,7 @@
         <form string="Libros">
           <sheet>
             <group>
-              <field name="title"/>
+              <field name="name"/>
               <field name="rack"/>
               <field name="author_id"/>
               <field name="description"/>
@@ -27,7 +27,6 @@
       <field name="arch" type="xml">
         <tree string="Libros">
           <field name="name"/>	  
-          <field name="title"/>
           <field name="description"/>
           <field name="rack"/>
           <field name="author_id"/>

@@ -10,8 +10,7 @@ class Homelibrary(models.Model):
 
 class Book(models.Model):
     _name = 'homelibrary.book'
-    name = fields.Char(requred=True)
-    title = fields.Char(required=True, string='Título')
+    name = fields.Char(required=True, string='Título')
     description = fields.Text(string='Descripción adicional')
     rack = fields.Integer(required=False, string='Estantería')
     author_id = fields.Many2one('homelibrary.author', string='Autor')
