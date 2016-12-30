@@ -45,6 +45,7 @@
             <group>
               <field name="name"/>
               <field name="book_ids"/>
+	      <field name="number_books"/>
             </group>
           </sheet>
         </form>
@@ -57,7 +58,8 @@
       <field name="arch" type="xml">
         <tree string="Autores">
           <field name="name"/>
-          <field name="book_ids"/>
+          <field name="book_ids"/>	  
+<!--          <field name="number_books"/> -->
         </tree>
       </field>
     </record>
@@ -84,10 +86,10 @@
       <field name="name">homelibrary.video.tree</field>
       <field name="model">homelibrary.video</field>
       <field name="arch" type="xml">
-        <tree string="Libros">
+        <tree string="Vídeos">
           <field name="name"/>	  
-          <field name="description"/>
           <field name="rack"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>    

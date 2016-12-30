@@ -17,8 +17,14 @@ class Book(models.Model):
 
 class Author(models.Model):
     _name = 'homelibrary.author'
+    @api.one
+    def count_books(self):
+        self.number_books = len(self.book_ids)
+        return True
+    
     name = fields.Char(required=True, string='Nombre')
     book_ids = fields.One2many('homelibrary.book', 'author_id', string='Libros del autor')
+    number_books = fields.Integer(compute='count_books', string='Total libros autor')
 
 class Video(models.Model):
     _name = 'homelibrary.video'
