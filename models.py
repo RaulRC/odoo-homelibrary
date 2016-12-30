@@ -19,4 +19,10 @@ class Author(models.Model):
     _name = 'homelibrary.author'
     name = fields.Char(required=True, string='Nombre')
     book_ids = fields.One2many('homelibrary.book', 'author_id', string='Libros del autor')
-     
+
+class Video(models.Model):
+    _name = 'homelibrary.video'
+    name = fields.Char(required=True, string='Título')
+    description = fields.Text(string='Descripción adicional')
+    rack = fields.Integer(required=False, string='Estantería')
+
